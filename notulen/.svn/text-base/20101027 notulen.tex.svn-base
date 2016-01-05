@@ -1,0 +1,94 @@
+%
+%  untitled
+%
+%  Created by Etienne van Delden on 2010-10-30.
+%  Copyright (c) 2010 __MyCompanyName__. All rights reserved.
+%
+\documentclass[a4paper]{article}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+%\usepackage{fullpage}
+
+% Uncomment some of the following if you use the features
+%
+% Running Headers and footers
+%\usepackage{fancyhdr}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\title{Notulen vergadering 27-10-2010}
+\author{Etienne van Delden}
+
+\date{2010-10-30}
+
+\begin{document}
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\maketitle
+
+\section{Aanwezigen} % (fold)
+\label{sec:aanwezigen}
+\begin{tabular}{l|l}
+Aanwezig & Afwezig \\
+dr. W. van den Hoogen &  dr.ir. R. Cuypers\\
+Vincent van den Goor & \\
+Tom Koppenol & \\
+Martijn Frissen & \\
+Etienne van Delden & 
+\end{tabular}
+% section aanwezigen (end)
+
+\section{Afspraken}
+\begin{description}
+    \item[Onderzoeksvraag] We kunnen verschillende kanten op met ons onderzoek. We gaan met deze OGO het hele onderzoeksproces door, waaronder ook de onderzoeksvraag. We moeten zelf een onderzoeksvraag opstellen.
+    \item[Literatuur] Dhr. van den Hoogen had nog een artikel over fuzzy logic (en later per email twee extra papers) opgezocht. We moeten op zoek naar literatuur op het gebied van onderzoek naar gaming, om wat basis op te bouwen.
+    \item[Setting] We moeten nadenken over wat voor een setting we willen onderzoeken, zoals pc-games of console-games
+    \item[Type game] We moeten bekijken wat voor type game we gaan gebruiken. Dit is ook deels afhankelijk van het kunnen aanpassen van het spel.
+    \item[Randvoorwaarden] We moeten nadenken over wat voor randvoorwaarden we mee te maken krijgen.
+\end{description}
+
+\section{W.V.T.T.K} % (fold)
+\label{sec:w_v_t_t_k}
+ Etienne gaat onderzoken of het mogelijk is de drukgevoelige knoppen van een DualShock 3 controller (voor PlayStation 3) uit te lezen. Dit zou betekenen dat er geen extra hardware of modicifaties nodig zijn.
+% section w_v_t_t_k (end)
+
+\end{document}

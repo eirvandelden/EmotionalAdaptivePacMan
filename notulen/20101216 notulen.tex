@@ -1,0 +1,111 @@
+%
+%  untitled
+%
+%  Created by Etienne van Delden on 2010-10-30.
+%  Copyright (c) 2010 __MyCompanyName__. All rights reserved.
+%
+\documentclass[a4paper]{article}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+%\usepackage{fullpage}
+
+% Uncomment some of the following if you use the features
+%
+% Running Headers and footers
+%\usepackage{fancyhdr}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\title{Notulen vergadering 27-10-2010}
+\author{Etienne van Delden}
+
+\date{2010-10-30}
+
+\begin{document}
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\maketitle
+
+\section{Aanwezigen} % (fold)
+\label{sec:aanwezigen}
+\begin{tabular}{l|l}
+Aanwezig & Afwezig \\
+dr. W. van den Hoogen & Vincent van den Goor \\
+dr.ir. R. Cuypers & \\
+Joris Janssen MSc. & \\
+Martijn Frissen & \\
+Etienne van Delden & \\
+Tom Koppenol & 
+\end{tabular}
+% section aanwezigen (end)
+
+\section{Agenda} % (fold)
+\label{sec:agenda}
+    Planning word toegevoegd, word besproken na de mededelingen.
+% section agenda (end)
+
+\section{Notulen vorige vergadering} % (fold)
+\label{sec:notulen_vorige_vergadering}
+
+% section notulen_vorige_vergadering (end)
+
+\section{Mededelingen} % (fold)
+\label{sec:mededelingen}
+    Vincent is de afgelopen week ziek is geweest waardoor wij achter lopen. De mobi werkt alleen op Vincents computer, maar 
+% section mededelingen (end)
+
+\section{Onderzoeksvraag/Hypothesen} % (fold)
+\label{sec:onderzoeksvraag_hypothesen}
+
+% section onderzoeksvraag_hypothesen (end)
+
+\section{Experiment Opzet} % (fold)
+\label{sec:experiment_opzet}
+
+% section experiment_opzet (end)
+
+\section{Feedbackloop} % (fold)
+\label{sec:feedbackloop}
+
+% section feedbackloop (end)
+
+\end{document}

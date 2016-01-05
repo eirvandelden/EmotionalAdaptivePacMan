@@ -1,0 +1,10 @@
+DONE 	E	input mobi threading + verwerking
+DONE 	E	pressure + user input meegeven
+DONE	k nearest neighbour (2x easy=easy, 2x hard=hard, anders good)
+DONE	startknopje wanneer het filmpje wordt gestart (datetime.now)
+DONE	Algoritme voor het beslissen welke kant we op moeten gaan met de snelheid
+DONE	Timer calibratie mode (10-15 min.)
+DONE	Timer adaptive mode (3x5 min.)
+
+DONE	Adaptive points in real-time toevoegen
+DONE	Adapt.dat inlezen bij start adaptive mode

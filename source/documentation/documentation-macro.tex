@@ -1,0 +1,32 @@
+%%
+%%  MACROS FOR documentation
+%%
+%%  Created by Etienne van Delden on 21-02-11.
+%%  Copyright 2011 __MyCompanyName__. All rights reserved.
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% MARK: Page Display
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parindent 0mm 
+\parskip 0.5em plus 1pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% MARK: Theorem Environments
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{header}{\em }{}
+
+\newtheorem{claim}{}
+
+\newenvironment{proof}{
+\noindent{\sc Proof.}}{\nolinebreak$\blacksquare$
+}
+
+\newcommand{\artlabel}[1]{{\sc #1.}}
+

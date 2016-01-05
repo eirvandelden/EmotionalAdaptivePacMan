@@ -1,0 +1,6 @@
+H:\RAZOR\Desktop\Source code\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\RAZOR\Desktop\Source code\Content\obj\x86\Debug\Audio\XNAPacManAudio.xml
+C:\Users\Cedric Do'Urden\Documents\0PH00 EAG\source\trunk\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Cedric Do'Urden\Documents\0PH00 EAG\source\trunk\Content\obj\x86\Debug\Audio\XNAPacManAudio.xml
+D:\minor project\SVN\source\trunk\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\minor project\SVN\source\trunk\Content\obj\x86\Debug\Audio\XNAPacManAudio.xml

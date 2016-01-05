@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XNAPacMan</name>
+    </assembly>
+    <members>
+        <member name="T:XNAPacMan.GhostSoundsManager">
+            <summary>
+            All four ghosts use the same sounds, and only one can be played at a time. So, instead of having to
+            synchronize each other, they use this class.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.XNAPacMan">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.XNAPacMan.Initialize">
+            <summary>
+            Allows the game to perform any initialization it needs to before starting to run.
+            This is where it can query for any required services and load any non-graphic
+            related content.  Calling base.Initialize will enumerate through any components
+            and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.XNAPacMan.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.XNAPacMan.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="T:XNAPacMan.TileTypes">
+            <summary>
+            By who the tile can be traversed
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.TileTypes.Open">
+            <summary>
+            Everyone can go through
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.TileTypes.Closed">
+            <summary>
+            No one can go through
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.TileTypes.Home">
+            <summary>
+            Under special circumstances ghosts can go there
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Grid">
+            <summary>
+            Represents the maze in terms of tiles. Initializes itself from txt file.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Grid.#cctor">
+            <summary>
+            Creates a new Grid object
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Grid.initializeFromFile">
+            <summary>
+            Reads Grid.txt to get an object grid from the numbers.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Tile">
+            <summary>
+            A square of the maze
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Tile.#ctor(XNAPacMan.TileTypes,System.Boolean,System.Boolean,Microsoft.Xna.Framework.Point)">
+            <summary>
+            Sets the different attributes
+            </summary>
+            <param name="type">The type of tile</param>
+            <param name="hasCrump">Whether the tile has a crump</param>
+            <param name="hasPowerPill">Whether the tile has a power pill</param>
+        </member>
+        <member name="P:XNAPacMan.Tile.Type">
+            <summary>
+            The type of the tile
+            </summary>
+        </member>
+        <member name="P:XNAPacMan.Tile.HasCrump">
+            <summary>
+            Whether the tile has a crump
+            </summary>
+        </member>
+        <member name="P:XNAPacMan.Tile.HasPowerPill">
+            <summary>
+            Whether the tile has a power pill
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.frmEvents.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.frmEvents.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XNAPacMan.frmEvents.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Position">
+            <summary>
+            Defines the position of an entity (player, ghost) on the board. 
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.Position.Tile">
+            <summary>
+            The tile the entity is on.
+            </summary>
+        </member>
+        <member name="F:XNAPacMan.Position.DeltaPixel">
+            <summary>
+            How many pixels the entity is off its nominal tile.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Player">
+            <summary>
+            This is the yellow pac man that eat dots and gets killed 
+            repetitively unless you're good.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Player.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the Player to update itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Player.TryMove">
+            <summary>
+            Ensures that if the Pac Man moves, it is a legal move
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Player.DoMove">
+            <summary>
+            Effectively moves the Pac Man according to member variable direction_.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Player.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Allows the Player to be drawn to the screen. Assumes spritebatch.begin() has been called, and
+            spritebatch.end() will be called afterwards.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Player.RenderSprite(Microsoft.Xna.Framework.Graphics.Texture2D,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Allows rendering across the tunnel, which is tricky.
+            </summary>
+            <param name="spriteSheet">Source texture</param>
+            <param name="rectangle">Portion of the source to render. Pass null for rendering the whole texture.</param>
+            <param name="boardPosition">Top-left pixel of the board in the screen</param>
+            <param name="position">Where to render the texture.</param>
+        </member>
+        <member name="M:XNAPacMan.Player.Reset">
+            <summary>
+            Should be called anytime the Pac Man needs to be reset (game start, level start)
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Player.TryTurn(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Ensures that if the Pac Man turns, it's in a valid direction.
+            </summary>
+            <param name="input">Direction the player tries to steer the Pac Man towards</param>
+        </member>
+        <member name="M:XNAPacMan.Player.DoTurn(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            This effectively makes Pac Man turn.
+            We have to update the sprites used for animation,
+            and if the Pac Man is between two tiles, change his Position.
+            </summary>
+            <param name="newDirection">Direction to turn towards</param>
+        </member>
+        <member name="T:XNAPacMan.HighScores">
+            <summary>
+            This is a game component that implements IUpdateable.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.HighScores.Initialize">
+            <summary>
+            Allows the game component to perform any initialization it needs to before starting
+            to run.  This is where it can query for any required services and load content.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.HighScores.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game component to update itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.HighScores.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the component to draw itself
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values</param>
+        </member>
+        <member name="T:XNAPacMan.ScoreEvent">
+            <summary>
+            Defines a position on the board where a ghost has died or a fruit was eaten, as well as the score earned.
+            This is used for knowing where to draw those scores
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.GameLoop">
+            <summary>
+            GameLoop is the main "game" object; this is basically where the action
+            takes place. It's responsible for coordinating broad game logic,
+            drawing the board and scores, as well as linking with the menu.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.GameLoop.Initialize">
+            <summary>
+            Allows the game component to perform any initialization it needs to before starting
+            to run.  This is where it can query for any required services and load content.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.GameLoop.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game component to update itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.GameLoop.noCrumpsLeft">
+            <summary>
+            Nice to have for debug purposes. We might want the level to end early.
+            </summary>
+            <returns>Whether there are no crumps left on the board.</returns>
+        </member>
+        <member name="M:XNAPacMan.GameLoop.KillPacMan">
+            <summary>
+            AAAARRRGH
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.GameLoop.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="P:XNAPacMan.GameLoop.Score">
+            <summary>
+            The player's current score.
+            </summary>
+        </member>
+        <member name="P:XNAPacMan.GameLoop.LockTimer">
+            <summary>
+            For how much time we want to lock the game.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Constants">
+            <summary>
+            This class provides global access to important game constants; what fruits appear on what levels,
+            relative speeds of everything, timers, etc. Centralizing this data here makes it easy to change
+            the game settings. It also relieves the data-heavy ghost and gameloop classes from a LOT of definitions.
+            </summary>
+        </member>
+        <member name="T:XNAPacMan.Menu">
+            <summary>
+            This is a game component that implements IUpdateable.
+            </summary>
+            Optionally takes a GameLoop argument, when the menu must be able to
+            resume the current GameLoop. Otherwise, the reference would be lost
+            and the gameLoop garbage collected.
+        </member>
+        <member name="M:XNAPacMan.Menu.Initialize">
+            <summary>
+            Allows the game component to perform any initialization it needs to before starting
+            to run.  This is where it can query for any required services and load content.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Menu.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game component to update itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Menu.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Menu.SaveHighScore(System.Int32)">
+            <summary>
+            Keep a history of the best 10 scores
+            </summary>
+            <param name="highScore">New score to save, might make it inside the list, might not.</param>
+        </member>
+        <member name="T:XNAPacMan.Ghost">
+            <summary>
+            One of the ghosts that try to kill Pac Man. 
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.#ctor(Microsoft.Xna.Framework.Game,XNAPacMan.Player,XNAPacMan.Ghosts)">
+            <summary>
+            Instantiates a ghost.
+            </summary>
+            <param name="game">A reference to the Game object, needed for access to services.</param>
+            <param name="player">A reference to the Pac Man, needed for AI.</param>
+            <param name="identity">Which ghost, needed for appearance and behavior.</param>
+        </member>
+        <member name="M:XNAPacMan.Ghost.Reset(System.Boolean,XNAPacMan.Player)">
+            <summary>
+            Put the ghosts back in their home, ready to begin a new attack
+            </summary>
+            <param name="newLevel">True at level start, false otherwise</param>
+            <param name="player">The pac man. Pac Man is often respawned with the ghosts, so they need to know about the new Pac Man.</param>
+        </member>
+        <member name="M:XNAPacMan.Ghost.LockTimer(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            When we need to lock the game, make sure the timers here are updated to reflect
+            the "waste of time".
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.SetBlinky(XNAPacMan.Ghost)">
+            <summary>
+            In case this ghost is Inky, he will need a reference to blinky in order
+            to find his way around the maze. Otherwise, setting this has no effect.
+            </summary>
+            <param name="blinky">A reference to Blinky.</param>
+        </member>
+        <member name="M:XNAPacMan.Ghost.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Call this every game update to get those ghosts moving around.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Ghost.AIScatter">
+            <summary>
+            Guides the ghost towards his "favored" area of the board, as defined by scatterTiles_.
+            </summary> 
+        </member>
+        <member name="M:XNAPacMan.Ghost.AIAttack">
+            <summary>
+            Guides the ghost to try to reach the player
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.AttackAIBlinky">
+            <summary>
+            Blinky is extremely straightforward : head directly for the player
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.AttackAIPinky">
+            <summary>
+            Pinky tries to head for two tiles ahead of the player.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.AttackAIInky">
+            <summary>
+            Inky is a bit more random. He will try to head for a square situated across
+            the pac man from blinky's location.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.AttackAIClyde">
+            <summary>
+            Clyde is the bizarre one. When within 8 tiles of the player,
+            he will head for his favored corner (AIScatter). When farther away,
+            he will near the player using Blinky's AI.
+            </summary>
+        </member>
+        <member name="M:XNAPacMan.Ghost.OppositeDirection(XNAPacMan.Direction)">
+            <summary>
+            Returns the opposite of the specified direction 
+            </summary>
+            <param name="d">direction</param>
+            <returns>opposite direction</returns>
+        </member>
+        <member name="M:XNAPacMan.Ghost.FindDirection(Microsoft.Xna.Framework.Point)">
+            <summary>
+            Returns in what direction we should go next in order to reach the destination.
+            </summary>
+            <param name="destination">Where we want to go</param>
+            <returns>Where to go next</returns>
+        </member>
+        <member name="M:XNAPacMan.Ghost.NextTile(XNAPacMan.Direction)">
+            <summary>
+            Retrieves the next tile in the specified direction from the ghost's position.
+            </summary>
+            <param name="d">Direction in which to look</param>
+            <returns>The tile</returns>
+        </member>
+        <member name="M:XNAPacMan.Ghost.NextTile(XNAPacMan.Direction,XNAPacMan.Position)">
+            <summary>
+            Retrieves the next tile in the specified direction from the specified position.
+            </summary>
+            <param name="d">Direction in which to look</param>
+            <param name="p">Position from which to look</param>
+            <returns>The tile</returns>
+        </member>
+        <member name="M:XNAPacMan.Ghost.IsAJunction(Microsoft.Xna.Framework.Point)">
+            <summary>
+            Returns whether the specified tile is a junction.
+            </summary>
+            <param name="tile">Tile to check</param>
+            <returns>whether the specified tile is a junction</returns>
+        </member>
+        <member name="M:XNAPacMan.Ghost.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Assumes spritebatch.begin() was called
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:XNAPacMan.Ghost.RenderSprite(Microsoft.Xna.Framework.Graphics.Texture2D,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Allows rendering across the tunnel, which is tricky.
+            </summary>
+            <param name="spriteSheet">Source texture</param>
+            <param name="rectangle">Portion of the source to render. Pass null for rendering the whole texture.</param>
+            <param name="boardPosition">Top-left pixel of the board in the screen</param>
+            <param name="position">Where to render the texture.</param>
+        </member>
+    </members>
+</doc>

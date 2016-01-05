@@ -1,0 +1,33 @@
+Motion injoy axes to use:
+Axis Rx
+Axis Ry (missing?)
+Axis Rz
+Axis Slider
+
+Links:
+Small tutorial on using Soopah Input: http://www.miszalok.de/C_3D_XNA/C4_Controller/XNAC4_GamePad_e.htm
+
+How to add SlimDX to add VisualStudio 2010
+http://slimdx.org/tutorials/basicwindow.php
+
+PacMan speeds:
+7,9,8,8,9, ... (Lower number == faster) 
+Ghost Speeds
+13, 11, 12, 12, 11, ... (Lower number == faster)
+
+
+Software Requiremenst:
+Must have:
+Calibration mode:
+	Spelsnelheid langzaam aan verhogen
+	Response op te moeilijk/makkelijk maken
+	Timer resetten bij starten spel
+	Log schrijven/appenden aan eind van ieder level/wisseling speed
+	Log schrijven/appenden naar disk aan einde sessie
+	Korte speeltijd verwijderen
+	Te Moeilijk / Te makkelijk knoppen maken
+	
+	Difficulty levels verwijderen
+
+Adaption mode:
+	

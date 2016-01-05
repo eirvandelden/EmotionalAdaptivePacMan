@@ -1,0 +1,155 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		CDFC7D36114EA974004CD9CD /* Typeset documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CDFC7D3F114EA9BA004CD9CD /* Build configuration list for PBXAggregateTarget "Typeset documentation" */;
+			buildPhases = (
+				CDFC7D3A114EA99B004CD9CD /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Typeset documentation";
+			productName = "Typeset document";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		CD8ED57411458442007CB527 /* documentation-macro.tex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.latex; path = "documentation-macro.tex"; sourceTree = "<group>"; };
+		CDAF6994117B1B8900F35865 /* documentation.tex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.latex; path = documentation.tex; sourceTree = "<group>"; };
+		CDAF6995117B1BA800F35865 /* documentation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = documentation.pdf; sourceTree = "<group>"; };
+		CDB3792411856FA400CF7861 /* documentation.aux */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.latex; path = documentation.aux; sourceTree = "<group>"; };
+		CDB3792511856FA400CF7861 /* documentation.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = documentation.log; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		CD34407B11481B370018E5ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CD34407C11481B410018E5ED /* Auxiliaries */ = {
+			isa = PBXGroup;
+			children = (
+				CDB3792411856FA400CF7861 /* documentation.aux */,
+				CDB3792511856FA400CF7861 /* documentation.log */,
+			);
+			name = Auxiliaries;
+			sourceTree = "<group>";
+		};
+		CD4A01B31145830B0038515B = {
+			isa = PBXGroup;
+			children = (
+				CDAF6994117B1B8900F35865 /* documentation.tex */,
+				CD8ED57411458442007CB527 /* documentation-macro.tex */,
+				CDAF6995117B1BA800F35865 /* documentation.pdf */,
+				CD34407B11481B370018E5ED /* Resources */,
+				CD34407C11481B410018E5ED /* Auxiliaries */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		CD4A01B51145830B0038515B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = __MyCompanyName__;
+			};
+			buildConfigurationList = CD4A01B81145830B0038515B /* Build configuration list for PBXProject "documentation" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = CD4A01B31145830B0038515B;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDFC7D36114EA974004CD9CD /* Typeset documentation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDFC7D3A114EA99B004CD9CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/texbin/pdflatex $(SRCROOT)documentation.tex && open $(SRCROOT)documentation.pdf\n\n# or if the pdf file is already open in preview\n\n# /usr/texbin/pdflatex $(SRCROOT)documentation.tex && open \"/Application/Preview.app\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CD4A01B61145830B0038515B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		CD4A01B71145830B0038515B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		CDFC7D37114EA974004CD9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Typeset document";
+			};
+			name = Debug;
+		};
+		CDFC7D38114EA974004CD9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Typeset document";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD4A01B81145830B0038515B /* Build configuration list for PBXProject "documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4A01B61145830B0038515B /* Debug */,
+				CD4A01B71145830B0038515B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDFC7D3F114EA9BA004CD9CD /* Build configuration list for PBXAggregateTarget "Typeset documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFC7D37114EA974004CD9CD /* Debug */,
+				CDFC7D38114EA974004CD9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD4A01B51145830B0038515B /* Project object */;
+}
